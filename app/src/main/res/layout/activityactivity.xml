@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:id="@+id/Header"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintHeight_percent="0.1">
+    <ImageView
+        android:id="@+id/backbutton"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/line"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Dive Rota"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <devs.mulham.horizontalcalendar.HorizontalCalendarView
+      android:id="@+id/calendarView"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      android:background="@drawable/light_purple_bcg"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/Header"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:selectorColor="@android:color/black"
+      app:textColorNormal="@color/purple_700"
+      app:textColorSelected="@color/black" />
+  <androidx.appcompat.widget.AppCompatButton
+      android:layout_width="0dp"
+      android:layout_height="35dp"
+      android:id="@+id/button1"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      android:layout_margin="20dp"
+      android:text="Day shift"
+      android:textColor="@color/white"
+      app:layout_constraintEnd_toStartOf="@id/button2"
+      android:background="@drawable/dark_purple_5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/calendarView"/>
+  <androidx.appcompat.widget.AppCompatButton
+      android:layout_width="0dp"
+      android:text="Night Shift"
+      android:layout_height="35dp"
+      android:id="@+id/button2"
+      android:layout_margin="20dp"
+      android:background="@drawable/light_purple_bcg"
+    app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/button1"
+    app:layout_constraintTop_toBottomOf="@id/calendarView"/>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/button1"
+    android:textSize="24sp"
+      android:layout_marginStart="20dp"
+    android:textColor="@color/black"
+    android:text="Current Date"
+    android:textStyle="bold"
+      android:id="@+id/cuurrentTF"
+    android:layout_marginTop="10dp"/>
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:id="@+id/rotaRV"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/cuurrentTF"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_margin="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

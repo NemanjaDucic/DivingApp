@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/Header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.1">
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/line"
+            android:layout_marginStart="20dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Header"
+        android:id="@+id/diveTypeTextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:text="Diving Method"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diveTypeTextView"
+        app:layout_constraintHeight_percent="0.1"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/checkboxHolder"
+        android:layout_marginTop="20dp">
+        <CheckBox
+            app:layout_constraintBottom_toTopOf="@id/checkbox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scuba"
+            android:buttonTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkbox2"
+            android:id="@+id/checkbox1"/>
+        <CheckBox
+            android:buttonTint="@color/black"
+
+            app:layout_constraintBottom_toTopOf="@id/checkbox5"
+            app:layout_constraintStart_toEndOf="@+id/checkbox1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Surf.Supp"
+            app:layout_constraintEnd_toStartOf="@id/checkbox3"
+            android:id="@+id/checkbox2"/>
+        <CheckBox
+            android:buttonTint="@color/black"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wet Bell"
+            app:layout_constraintBottom_toTopOf="@id/checkbox6"
+            app:layout_constraintStart_toEndOf="@id/checkbox2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/checkbox3"/>
+        <CheckBox
+            android:buttonTint="@color/black"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkbox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S.R.P"
+            app:layout_constraintTop_toBottomOf="@id/checkbox1"
+            android:id="@+id/checkbox4"/>
+        <CheckBox
+            android:buttonTint="@color/black"
+
+            app:layout_constraintTop_toBottomOf="@id/checkbox2"
+            app:layout_constraintStart_toEndOf="@id/checkbox4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkbox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bell Bounce"
+            android:id="@+id/checkbox5"/>
+        <CheckBox
+            android:buttonTint="@color/black"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/checkbox5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T.U.P "
+            app:layout_constraintTop_toBottomOf="@id/checkbox3"
+            android:id="@+id/checkbox6"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxHolder"
+        android:id="@+id/bottomMixTV"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:text="Bottom Mix"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:textStyle="bold"/>
+    <CheckBox
+        android:buttonTint="@color/black"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nitrox- Mixed Gas"
+        android:id="@+id/nitroCheckbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomMixTV"
+        android:layout_marginEnd="25dp"/>
+    <CheckBox
+        android:buttonTint="@color/black"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Air"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="25dp"
+        android:id="@+id/airCheckbox"
+        app:layout_constraintTop_toBottomOf="@id/bottomMixTV"/>
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/airCheckbox">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/bottommixAnalysisTV"
+            android:text="Bottom Mix Analysis"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintTop_toBottomOf="@id/bottommixAnalysisTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:padding="5dp"
+
+            android:id="@+id/bottomixET"
+            android:background="@drawable/et_outline"
+            />
+        <TextView
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/bottomixET"
+            android:layout_width="wrap_content"
+            android:id="@+id/personelTV"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            android:text="Personel"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+
+            app:layout_constraintTop_toBottomOf="@id/personelTV"
+            android:id="@+id/personelET"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:background="@drawable/et_outline"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/diverHoler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintTop_toBottomOf="@id/personelET"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/diver1TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Diver 1"/>
+            <TextView
+                android:id="@+id/diver2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diver 2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:id="@+id/diver1ET"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+
+                android:background="@drawable/et_outline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/diver2ET"/>
+            <EditText
+                android:padding="5dp"
+
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:id="@+id/diver2ET"
+                android:background="@drawable/et_outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/diver1ET"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/diverHoler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/sdiverTV"
+            android:text="S’BY Diver"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sdiverTV"
+            android:id="@+id/sdiverET"
+            android:background="@drawable/et_outline"
+            />
+        <TextView
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/sdiverET"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/opTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Winch Op"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+
+            app:layout_constraintTop_toBottomOf="@id/opTV"
+            android:id="@+id/opET"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/et_outline"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            />
+        <TextView
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opET"
+                android:id="@+id/chamberTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chamber Op"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+
+            app:layout_constraintTop_toBottomOf="@id/chamberTV"
+            android:id="@+id/chamberET"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/et_outline"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            />
+    <androidx.appcompat.widget.AppCompatButton
+        app:layout_constraintTop_toBottomOf="@id/chamberET"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/navi_blue_button_bcg"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

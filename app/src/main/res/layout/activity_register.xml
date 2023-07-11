@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/onboard"
+        android:scaleType="fitXY"
+        app:layout_constraintHeight_percent="0.6"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        android:background="@drawable/white_view_bcg">
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Log in"
+            android:textSize="32sp"
+            android:id="@+id/tv_top"
+            android:fontFamily="sans-serif-black"
+                android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Enter your Details to countinue"
+            app:layout_constraintTop_toBottomOf="@id/tv_top"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/et_password"
+            android:hint="Email"
+            app:layout_constraintTop_toBottomOf="@id/tv_info"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_mail"
+            android:drawableRight="@drawable/eye"
+            android:layout_width="0dp"
+            android:background="@drawable/et_outline"
+            android:fontFamily="sans-sarif"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@id/et_password_confirm"
+            android:drawableRight="@drawable/eye"
+            app:layout_constraintTop_toBottomOf="@id/et_mail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_outline"
+            android:padding="10dp"
+            android:fontFamily="sans-sarif"
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:padding="10dp"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@id/button"
+            android:hint="Confirm Password"
+            android:fontFamily="sans-sarif"
+
+            android:drawableRight="@drawable/eye"
+            android:background="@drawable/et_outline"
+            app:layout_constraintTop_toBottomOf="@id/et_password"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_password_confirm"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            app:layout_constraintTop_toBottomOf="@id/et_password_confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:text="Log in"
+            app:layout_constraintBottom_toTopOf="@id/tv_reg"
+            android:background="@drawable/navi_blue_button_bcg"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:fontFamily="sans-serif-medium"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Don't have an Account? Register"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/tv_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

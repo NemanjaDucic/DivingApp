@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "533723753561",
+    "firebase_url": "https://diveactivity-default-rtdb.firebaseio.com",
+    "project_id": "diveactivity",
+    "storage_bucket": "diveactivity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533723753561:android:186ec58964ab1901c01548",
+        "android_client_info": {
+          "package_name": "com.magma.DivingApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533723753561-pgb31m7slp1rdee6b3u6073286aq2ets.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEU4khZzbItLqRZSn1wClSd5Bhm09KfOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533723753561-pgb31m7slp1rdee6b3u6073286aq2ets.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "533723753561-2l27p8hk7l3623amqreihndvg0u0l3sb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magma.DivingApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

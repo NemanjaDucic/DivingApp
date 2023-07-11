@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/Header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.1">
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/line"
+            android:layout_marginStart="20dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Header"
+        android:id="@+id/diveTypeTextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:text="Dive Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:text="Start Diving"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/navi_blue_button_bcg"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp" />
+    <androidx.appcompat.widget.AppCompatButton
+
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/buttonCalc"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:text="Calculate"
+        app:layout_constraintBottom_toTopOf="@id/button"
+        android:background="@drawable/navi_blue_button_bcg"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/lBottomET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/diveTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonCalc"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+<TextView
+    android:id="@+id/lSurficeTV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Left Surfice(Enter)"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/diveTypeTextView"
+    android:layout_marginStart="25dp"
+    android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:background="@drawable/et_outline"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:id="@+id/lSurficeET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lSurficeTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="46dp"/>
+    <TextView
+        android:id="@+id/rBottomTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arrived Bottom(Enter)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lSurficeET"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:background="@drawable/et_outline"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:id="@+id/rBottomET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rBottomTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="46dp"/>
+    <TextView
+        android:id="@+id/lBottomTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left Bottom(Enter)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rBottomET"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        />
+    <EditText
+        android:background="@drawable/et_outline"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:id="@+id/lBottomET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lBottomTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="46dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
