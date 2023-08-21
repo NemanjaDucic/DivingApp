@@ -2,6 +2,7 @@ package com.magma.DivingApp.ui.home
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -20,7 +21,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.magma.DivingApp.R
 import com.magma.DivingApp.databinding.ActivityTabBarHolderBinding
-import com.magma.DivingApp.ui.fragments.DiveRecordsFragment
+import com.magma.DivingApp.ui.RegisterActivity
 import com.magma.DivingApp.ui.fragments.HomeFragment
 import com.magma.DivingApp.ui.fragments.NotificationsFragment
 import com.magma.DivingApp.ui.fragments.ReportsFragment
@@ -34,14 +35,22 @@ class HomeActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTabBarHolderBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        init()
+
         val sharedPreferences = getSharedPreferences("pref", Context.MODE_PRIVATE)
-        var num = sharedPreferences.getInt("adReward",1)
-        if (num % 2 == 0){
-            loadRewardedAd()
+        val user = sharedPreferences.getString("userID","")
+        if (user!!  == ""){
+            val intent = Intent(this,RegisterActivity::class.java)
+            startActivity(intent)
         } else {
-            sharedPreferences.edit().putInt("adReward",num+1).apply()
+            init()
+            var num = sharedPreferences.getInt("adReward",1)
+            if (num % 2 == 0){
+                loadRewardedAd()
+            } else {
+                sharedPreferences.edit().putInt("adReward",num+1).apply()
+            }
         }
+
 
     }
     private fun loadRewardedAd() {
@@ -129,10 +138,7 @@ class HomeActivity:AppCompatActivity() {
                     loadFragment(ReportsFragment())
                     true
                 }
-                R.id.menu_diverecords -> {
-                    loadFragment(DiveRecordsFragment())
-                    true
-                }
+
                 R.id.menu_notifications -> {
                     loadFragment(NotificationsFragment())
                     true

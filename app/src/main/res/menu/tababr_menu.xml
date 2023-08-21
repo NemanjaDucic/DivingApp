@@ -11,15 +11,12 @@
         android:icon="@drawable/notes"
         android:title="" />
 
-    <item
-        android:id="@+id/menu_diverecords"
-        android:icon="@drawable/stcase"
 
-        android:title="" />
+
 
     <item
         android:id="@+id/menu_notifications"
-        android:icon="@drawable/notifications"
+        android:icon="@drawable/suitcase"
         android:title="" />
 
     <item

@@ -39,7 +39,10 @@
         <activity android:name=".ui.createNewDive.NewDiveReadyToDiveActivity"/>
         <activity android:name=".ui.home.HistoryActivity"/>
         <activity android:name=".ui.diveHistory.DiveActivityDetails"/>
-
+        <activity android:name=".ui.notifications.ActivityCreateJob"/>
+        <activity android:name=".ui.notifications.ActivityJobList"/>
+        <activity android:name=".ui.profile.AdminActivity"/>
+        <activity android:name=".ui.RegisterActivity"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8589992377871541~9946538868"/>

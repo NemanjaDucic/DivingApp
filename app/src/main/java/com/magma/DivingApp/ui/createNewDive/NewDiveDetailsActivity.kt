@@ -32,6 +32,7 @@ class NewDiveDetailsActivity:AppCompatActivity() {
     private val vesselOptions = arrayListOf(
         "DSV Huwaila",
         "DSV Shaddad",
+        "Halul 41",
         "Halul 43",
         "Halul 51",
         "DSV Al Ghariyah",

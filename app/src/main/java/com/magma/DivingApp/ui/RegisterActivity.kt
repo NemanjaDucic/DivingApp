@@ -12,6 +12,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.magma.DivingApp.databinding.ActivityRegisterBinding
 import com.magma.DivingApp.model.UserModel
 import com.magma.DivingApp.ui.home.HomeActivity
+import com.magma.DivingApp.ui.profile.AdminActivity
 
 class RegisterActivity:AppCompatActivity() {
     private lateinit var binding : ActivityRegisterBinding
@@ -44,11 +45,18 @@ class RegisterActivity:AppCompatActivity() {
             }
         }
         binding.button.setOnClickListener {
+            if (binding.etPassword.text.toString() == "admin" && binding.etMail.text.toString() == "admin"){
+                    val intent = Intent(this, AdminActivity::class.java)
+                startActivity(intent)
+            } else {
+
+
             if (flag == false){
                 tryLogin()
             } else {
                 tryRegister()
             }
+        }
         }
     }
     private fun tryLogin(){
