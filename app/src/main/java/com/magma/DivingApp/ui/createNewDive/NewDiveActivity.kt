@@ -164,9 +164,7 @@ class NewDiveActivity:AppCompatActivity() {
                     Toast.makeText(this,"Please Pick Diving Type",Toast.LENGTH_SHORT).show()
             }
         }
-        binding.backbutton.setOnClickListener {
-            onBackPressed()
-        }
+
         binding.radioBut2.setOnClickListener {
             dive.diveType = "S.R.P"
             binding.radioBut1.isChecked = false

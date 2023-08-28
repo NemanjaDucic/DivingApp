@@ -2,34 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        android:alpha="0.2"
+        android:src="@drawable/coral"/>
 <androidx.appcompat.widget.AppCompatButton
     android:layout_width="0dp"
     android:background="@drawable/navi_blue_button_bcg"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/sortTitle"
-    android:layout_marginStart="20dp"
+   android:layout_margin="20dp"
     android:id="@+id/buttonOff"
-    android:layout_marginEnd="10dp"
+
+    app:layout_constraintBottom_toTopOf="@id/buttonROV"
     android:layout_marginTop="20dp"
     android:textSize="12sp"
     android:textColor="@color/white"
     android:text="Offshore Diving Job"
-    app:layout_constraintEnd_toStartOf="@id/buttonROV"
+    app:layout_constraintEnd_toEndOf="parent"
     android:layout_height="40dp"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonROV"
         android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:text="ROV JOB"
-        app:layout_constraintStart_toEndOf="@id/buttonOff"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="0dp"
         android:layout_marginStart="10dp"
-        android:background="@drawable/navi_blue_button_bcg"
+        app:layout_constraintBottom_toTopOf="@id/pickJobTV"
+        android:background="@drawable/dark_orange_bcg"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
-        app:layout_constraintTop_toBottomOf="@id/sortTitle"
+        app:layout_constraintTop_toBottomOf="@id/buttonOff"
         android:layout_height="40dp"/>
     <TextView
         android:id="@+id/sortTitle"
@@ -51,7 +64,7 @@
         android:fontFamily="sans-serif"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonOff"
+        app:layout_constraintTop_toBottomOf="@id/buttonROV"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Please pick Job from List"
         android:layout_margin="20dp"/>
@@ -104,7 +117,9 @@
       android:hint="Please Give us a short job description"
       app:layout_constraintStart_toStartOf="parent"
       android:layout_margin="20dp"
-      android:background="@drawable/et_outline"
+      android:textColorHint="@color/gray"
+
+      android:background="@drawable/outline_new"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tagSpinner"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -127,11 +142,12 @@
         android:layout_height="40dp"
         android:padding="10dp"
         android:gravity="top"
+        android:textColorHint="@color/gray"
         android:id="@+id/etLink"
         android:hint="Please enter Here your Contact email"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="20dp"
-        android:background="@drawable/et_outline"
+        android:background="@drawable/outline_new"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etDescription"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">DivingApp</string>
-    <string name="mapbox_access_token">pk.eyJ1Ijoib2xsaWphcnZhIiwiYSI6ImNsZnY3NmJpZzA0aTMzZmxneDhjcG1jYW8ifQ.ZHC2A4tr5_jvw_VNQo9RfA</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibWFya2pvaG5hbGRlbiIsImEiOiJjbGxvZDNjZG8wOWRxM2VvYW15OHJoZndzIn0.V-K1xXDHFA39q7ZnxVCHpg</string>
 
 </resources>

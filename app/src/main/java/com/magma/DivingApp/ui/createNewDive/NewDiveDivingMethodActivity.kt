@@ -158,13 +158,9 @@ class NewDiveDivingMethodActivity:AppCompatActivity() {
     }
     private fun check () :Boolean{
         val editTextList = listOf(
-            binding.bottomixET,
-            binding.personelET,
-            binding.diver1ET,
-            binding.diver2ET,
-            binding.sdiverET,
-            binding.opET,
-            binding.chamberET
+
+            binding.diver1ET
+
 
         )
 

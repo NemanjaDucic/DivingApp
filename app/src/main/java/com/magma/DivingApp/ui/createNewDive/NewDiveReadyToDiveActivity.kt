@@ -45,7 +45,7 @@ class NewDiveReadyToDiveActivity:AppCompatActivity() {
         setupTimePicker(binding.rBottomET)
 
 
-        binding.button.setOnClickListener {
+        binding.buttonStartDive.setOnClickListener {
             dive.uid = random
             databaseInstance.child("users").child(id!!).child("dives").child(random).setValue(dive).addOnCompleteListener {
                 val intent = Intent(this,NewDiveLogActivity::class.java)
@@ -53,8 +53,11 @@ class NewDiveReadyToDiveActivity:AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        binding.button.setOnClickListener {
+
+        binding.buttonCalc.setOnClickListener {
             calculateButtonTapped()
+
+
         }
     }
     private fun calculateButtonTapped() {
@@ -81,9 +84,9 @@ class NewDiveReadyToDiveActivity:AppCompatActivity() {
             airBreak,
             onSurfaceBleed
         )
-
-        binding.diveTimeLabel.text = "Dive Time: $diveTime minutes"
         dt = diveTime
+        binding.diveTimeLabel.text = "Dive Time: $diveTime minutes"
+
     }
     private fun calculateDiveTime(
         bottomTime: Int,

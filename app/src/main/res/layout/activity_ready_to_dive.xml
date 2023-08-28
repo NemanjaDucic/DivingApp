@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -11,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.1">
+        app:layout_constraintHeight_percent="0.0">
         <ImageView
             android:id="@+id/backbutton"
             android:layout_width="30dp"
@@ -22,15 +23,20 @@
             android:src="@drawable/line"
             android:layout_marginStart="20dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@id/lSurficeET"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Header"
         android:id="@+id/diveTypeTextView"
         android:textColor="@color/black"
+        android:layout_margin="20dp"
         android:textSize="24sp"
         android:text="Dive Profile"
+        android:src="@drawable/coral"
         app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"/>
 
@@ -39,36 +45,42 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:id="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/buttonStartDive"
+        app:layout_constraintEnd_toStartOf="@id/buttonCalc"
         android:layout_marginEnd="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:text="Start Diving"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/navi_blue_button_bcg"
+        android:background="@drawable/dark_orange_bcg"
         android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/diveTimeLabel"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp" />
     <androidx.appcompat.widget.AppCompatButton
 
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonStartDive"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:id="@+id/buttonCalc"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:text="Calculate"
-        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintTop_toBottomOf="@id/diveTimeLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/navi_blue_button_bcg"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp" />
     <TextView
         app:layout_constraintTop_toBottomOf="@id/lBottomET"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Calculate"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
+        android:background="@drawable/outline_new"
         android:id="@+id/diveTimeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +89,10 @@
         android:textColor="@color/black"
         android:textSize="20sp"/>
 <TextView
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/lSurficeET"
     android:id="@+id/lSurficeTV"
+    android:textColor="@color/black"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Left Surfice(Enter)"
@@ -86,8 +101,10 @@
     android:layout_marginStart="25dp"
     android:layout_marginTop="10dp"/>
     <EditText
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/rBottomTV"
         android:layout_marginTop="10dp"
-        android:background="@drawable/et_outline"
+        android:background="@drawable/outline_new"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:padding="5dp"
@@ -99,6 +116,9 @@
         android:layout_height="46dp"/>
     <TextView
         android:id="@+id/rBottomTV"
+        android:textColor="@color/black"
+app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rBottomET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Arrived Bottom(Enter)"
@@ -108,8 +128,10 @@
         android:layout_marginTop="10dp"/>
     <EditText
         android:layout_marginTop="10dp"
-        android:background="@drawable/et_outline"
+        android:background="@drawable/outline_new"
         android:layout_marginStart="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/lBottomTV"
         android:layout_marginEnd="25dp"
         android:padding="5dp"
         android:id="@+id/rBottomET"
@@ -120,6 +142,9 @@
         android:layout_height="46dp"/>
     <TextView
         android:id="@+id/lBottomTV"
+        android:textColor="@color/black"
+app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lBottomET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Left Bottom(Enter)"
@@ -129,11 +154,13 @@
         android:layout_marginTop="15dp"
         />
     <EditText
-        android:background="@drawable/et_outline"
+        android:background="@drawable/outline_new"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:padding="5dp"
         android:id="@+id/lBottomET"
+        android:textColor="@color/black"
+app:layout_constraintBottom_toTopOf="@id/diveTimeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lBottomTV"
         app:layout_constraintEnd_toEndOf="parent"

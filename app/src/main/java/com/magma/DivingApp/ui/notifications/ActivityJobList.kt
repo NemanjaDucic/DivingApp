@@ -39,6 +39,7 @@ class ActivityJobList:AppCompatActivity(), JobClickedInterface {
         binding.titleTVE.text = "Available Jobs"
         binding.buttonJobs.isVisible = false
         binding.buttonCheck.isVisible = false
+        binding.imageLogoTwo.isVisible = true
         adapter = JobListAdapter(arrayListOf(),this)
         binding.recyclerNotifications.adapter = adapter
         binding.recyclerNotifications.layoutManager = LinearLayoutManager(this)

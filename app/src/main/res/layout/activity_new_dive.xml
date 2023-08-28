@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="0dp"
@@ -11,15 +12,6 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintHeight_percent="0.1">
-    <ImageView
-        android:id="@+id/backbutton"
-        android:layout_width="30dp"
-        android:layout_height="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/line"
-        android:layout_marginStart="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +27,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/diveTypeTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,23 +91,17 @@
             <TextView
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
+
                 android:id="@+id/topPurpleLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@id/radioBut1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/botPurpleLabel"
-                android:text="Scuba"/>
-            <TextView
-                android:id="@+id/botPurpleLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@id/radioBut1"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topPurpleLabel"
-                android:text="Explain text here"/>
+                android:text="Scuba"/>
+
             <ImageView
 
                 android:layout_width="20dp"
@@ -144,6 +130,7 @@
                 android:id="@+id/radioBut2"
                 android:layout_width="40dp"
                 android:buttonTint="@color/black"
+                android:textColor="@color/black"
 
                 android:layout_height="40dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,6 +138,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="8dp"/>
             <TextView
+                android:textColor="@color/black"
+
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:id="@+id/topGrayLabel"
@@ -159,17 +148,9 @@
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@id/radioBut2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/botGrayLabel"
+app:layout_constraintBottom_toBottomOf="parent"
                 android:text="S.R.P"/>
-            <TextView
-                android:id="@+id/botGrayLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@id/radioBut2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topGrayLabel"
-                android:text="Explain text here"/>
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -208,19 +189,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@id/radioBut3"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/botOrangeLabel"
-                android:text="Bell Bounce"/>
-            <TextView
-                android:id="@+id/botOrangeLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@id/radioBut3"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topOrangeLabel"
-                android:text="Explain text here"/>
+                android:text="Bell Bounce"/>
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -257,25 +231,16 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:id="@+id/topBlueLabel"
+                android:textColor="@color/black"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/radioBut4"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/botBlueLabel"
                 android:text="Wet Bell"/>
-            <TextView
-                android:id="@+id/botBlueLabel"
 
-                android:layout_width="wrap_content"
-                android:textSize="14sp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                app:layout_constraintStart_toEndOf="@id/radioBut4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topBlueLabel"
-                android:text="Explain text here"/>
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -316,20 +281,14 @@
             android:id="@+id/topPurpleLabel5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/radioBut5"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/botPurpleLabel5"
+app:layout_constraintBottom_toBottomOf="parent"
             android:text="Surf.Supp"/>
-        <TextView
-            android:id="@+id/botPurpleLabel5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/radioBut5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topPurpleLabel5"
-            android:text="Explain text here"/>
+
         <ImageView
 
             android:layout_width="20dp"
@@ -372,19 +331,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+
             app:layout_constraintStart_toEndOf="@id/radioBut6"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/botPurpleLabel6"
+app:layout_constraintBottom_toBottomOf="parent"
             android:text="T.U.P"/>
-        <TextView
-            android:id="@+id/botPurpleLabel6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/radioBut6"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topPurpleLabel6"
-            android:text="Explain text here"/>
+
         <ImageView
 
             android:layout_width="20dp"

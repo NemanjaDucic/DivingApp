@@ -49,29 +49,5 @@ class NotificationsFragment:Fragment() {
         }
     }
 
-//    private fun listeners(){
-//        backButtonListener()
-//        createTournamentListener()
-//        createGroupListener()
-//    }
 
-//    private fun backButtonListener(){
-//        binding.imgBackButtonAddFragment.setOnClickListener{
-//            activity?.finish()
-//        }
-//    }
-//
-//    private fun createTournamentListener(){
-//        binding.btnCreateTournament.setOnClickListener{
-//            val bundle = Bundle()
-//            bundle.putBoolean("tournament",true)
-//            Utils.intent(binding.root.context,CreateActivity::class.java,bundle)
-//        }
-//    }
-//
-//    private fun createGroupListener(){
-//        binding.btnCreateGroup.setOnClickListener{
-//            Utils.intent(binding.root.context,CreateGroupActivity::class.java,null)
-//        }
-//    }
 }

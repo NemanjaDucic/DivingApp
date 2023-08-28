@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -48,6 +49,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Scuba"
+            android:textColor="@color/black"
+
             android:buttonTint="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -55,6 +58,7 @@
             android:id="@+id/checkbox1"/>
         <CheckBox
             android:buttonTint="@color/black"
+            android:textColor="@color/black"
 
             app:layout_constraintBottom_toTopOf="@id/checkbox5"
             app:layout_constraintStart_toEndOf="@+id/checkbox1"
@@ -66,6 +70,7 @@
             android:id="@+id/checkbox2"/>
         <CheckBox
             android:buttonTint="@color/black"
+            android:textColor="@color/black"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,6 +82,7 @@
             android:id="@+id/checkbox3"/>
         <CheckBox
             android:buttonTint="@color/black"
+            android:textColor="@color/black"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +94,7 @@
             android:id="@+id/checkbox4"/>
         <CheckBox
             android:buttonTint="@color/black"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/checkbox2"
             app:layout_constraintStart_toEndOf="@id/checkbox4"
@@ -99,6 +106,7 @@
             android:id="@+id/checkbox5"/>
         <CheckBox
             android:buttonTint="@color/black"
+            android:textColor="@color/black"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/checkbox5"
@@ -123,6 +131,7 @@
         android:textStyle="bold"/>
     <CheckBox
         android:buttonTint="@color/black"
+        android:textColor="@color/black"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,6 +142,7 @@
         android:layout_marginEnd="25dp"/>
     <CheckBox
         android:buttonTint="@color/black"
+        android:textColor="@color/black"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -156,6 +166,8 @@
     android:layout_height="match_parent">
 
         <TextView
+            android:textColor="@color/black"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
@@ -164,6 +176,8 @@
             android:id="@+id/bottommixAnalysisTV"
             android:text="Bottom Mix Analysis"/>
         <EditText
+            android:textColor="@color/black"
+
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"
             app:layout_constraintTop_toBottomOf="@id/bottommixAnalysisTV"
@@ -178,6 +192,7 @@
             />
         <TextView
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@+id/bottomixET"
             android:layout_width="wrap_content"
@@ -188,6 +203,7 @@
         <EditText
             android:layout_marginTop="10dp"
             android:padding="5dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/personelTV"
             android:id="@+id/personelET"
@@ -200,6 +216,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_marginTop="10dp"
+            android:textColor="@color/black"
 
             android:id="@+id/diverHoler"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,6 +226,8 @@
             android:layout_height="0dp">
 
             <TextView
+                android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@id/diver2TV"
                 android:id="@+id/diver1TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -216,13 +235,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="Diver 1"/>
             <TextView
+                android:textColor="@color/black"
+
                 android:id="@+id/diver2TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Diver 2"
+                app:layout_constraintStart_toEndOf="@id/diver1TV"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
             <EditText
+                android:textColor="@color/black"
+
                 android:layout_width="0dp"
                 android:layout_height="46dp"
                 android:id="@+id/diver1ET"
@@ -235,6 +259,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/diver2ET"/>
             <EditText
                 android:padding="5dp"
+                android:textColor="@color/black"
 
                 android:layout_width="0dp"
                 android:layout_height="46dp"
@@ -247,6 +272,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/diverHoler"
             android:layout_width="wrap_content"
@@ -257,6 +283,7 @@
         <EditText
             android:layout_marginTop="10dp"
             android:padding="5dp"
+            android:textColor="@color/black"
 
             android:layout_width="0dp"
             android:layout_height="46dp"
@@ -268,6 +295,7 @@
             />
         <TextView
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/sdiverET"
             app:layout_constraintStart_toStartOf="parent"
@@ -278,6 +306,7 @@
         <EditText
             android:layout_marginTop="10dp"
             android:padding="5dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/opTV"
             android:id="@+id/opET"
@@ -289,6 +318,7 @@
             />
         <TextView
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/opET"
@@ -299,6 +329,7 @@
         <EditText
             android:layout_marginTop="10dp"
             android:padding="5dp"
+            android:textColor="@color/black"
 
             app:layout_constraintTop_toBottomOf="@id/chamberTV"
             android:id="@+id/chamberET"

@@ -1,23 +1,45 @@
 package com.magma.DivingApp.ui.fragments
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageMetadata
+import com.magma.DivingApp.R
 import com.magma.DivingApp.databinding.FragmentProfileBinding
 import com.magma.DivingApp.model.UserModel
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
+import java.util.*
 
 class ProfileFragment:Fragment(){
     private lateinit var binding: FragmentProfileBinding
     val databaseInstance: DatabaseReference = FirebaseDatabase.getInstance().reference.child("users")
     private lateinit var attachedContext: Context
+    private var selectedImage = ""
+    private var  userID = ""
+    private val selectImageFromGalleryResult =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            selectedImage = uri.toString()
+            uri?.let { binding.imgPRofile.setImageURI(uri) }
+            uploadProfileImageFromUri(attachedContext,uri!!,userID)
+            databaseInstance.child(userID).child("data").child("image").setValue(selectedImage)
 
+        }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -37,8 +59,12 @@ class ProfileFragment:Fragment(){
         binding.etName.setOnClickListener {
             showAlertDialogWithTwoButtons()
         }
-        val sharedPreferences = attachedContext?.getSharedPreferences("pref", Context.MODE_PRIVATE)
+        binding.imgPRofile.setOnClickListener {
+            selectImageFromGalleryResult.launch("image/*")
 
+        }
+        val sharedPreferences = attachedContext?.getSharedPreferences("pref", Context.MODE_PRIVATE)
+        userID = sharedPreferences?.getString("userID","")!!
         databaseInstance.child(sharedPreferences?.getString("userID","")!!).child("data").get().addOnCompleteListener {
 
             val user =   it.result.getValue(UserModel::class.java)
@@ -48,7 +74,7 @@ class ProfileFragment:Fragment(){
             binding.topText.text = user?.name
             val n = user?.name
             binding.botText.text = "@$n"
-
+            Glide.with(attachedContext).load(user?.image).placeholder(R.drawable.devon).into(binding.imgPRofile)
 
         }
 
@@ -76,29 +102,37 @@ class ProfileFragment:Fragment(){
         dialog.show()
     }
 
-//    private fun listeners(){
-//        backButtonListener()
-//        createTournamentListener()
-//        createGroupListener()
-//    }
+    fun uploadProfileImageFromUri(context: Context, imageUri: Uri, user: String) {
+        val storage = FirebaseStorage.getInstance()
+        val storageRef = storage.reference.child("profile_images/$user.jpg")
+        val imageStream: InputStream? = context.contentResolver.openInputStream(imageUri)
+        val imageBitmap: Bitmap = BitmapFactory.decodeStream(imageStream)
 
-//    private fun backButtonListener(){
-//        binding.imgBackButtonAddFragment.setOnClickListener{
-//            activity?.finish()
-//        }
-//    }
-//
-//    private fun createTournamentListener(){
-//        binding.btnCreateTournament.setOnClickListener{
-//            val bundle = Bundle()
-//            bundle.putBoolean("tournament",true)
-//            Utils.intent(binding.root.context,CreateActivity::class.java,bundle)
-//        }
-//    }
-//
-//    private fun createGroupListener(){
-//        binding.btnCreateGroup.setOnClickListener{
-//            Utils.intent(binding.root.context,CreateGroupActivity::class.java,null)
-//        }
-//    }
+        val baos = ByteArrayOutputStream()
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos)
+        val imageData = baos.toByteArray()
+
+        val metadata = StorageMetadata.Builder()
+            .setContentType("image/jpeg")
+            .build()
+
+
+            }
+    fun loadImageFromFirebase(context: Context, imageUri: String, imageView: ImageView, placeholderResId: Int) {
+        val storage = FirebaseStorage.getInstance()
+        val storageRef = storage.reference
+
+        val imageReference = storageRef.child(imageUri)
+
+        val requestOptions = Glide.with(context)
+            .asBitmap()
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .placeholder(placeholderResId) // Placeholder image while loading
+
+        Glide.with(context) // Replace with GlideApp if using a custom Glide module
+            .load(imageReference)
+            .apply(requestOptions)
+            .into(imageView)
+    }
+
 }

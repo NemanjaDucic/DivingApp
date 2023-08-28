@@ -187,13 +187,7 @@ class NewDiveDetailsActivity:AppCompatActivity() {
 
     private fun check () :Boolean{
         val editTextList = listOf(
-            binding.divereportnumET,
             binding.clientET,
-            binding.currentET,
-            binding.swelltET,
-            binding.currentET,
-            binding.visibilityET,
-            binding.watertempET,
             binding.locationET
         )
 

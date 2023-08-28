@@ -2,9 +2,11 @@ package com.magma.DivingApp.ui.createNewDive
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.rangeTo
@@ -30,6 +32,8 @@ class NewDiveLogActivity:AppCompatActivity(),ActivitySelectedListener {
     lateinit var adapter:LogAdapter
     private var random = ""
     private var logArray = arrayListOf<LogModel>()
+    private var selectedImage = ""
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,9 +86,7 @@ class NewDiveLogActivity:AppCompatActivity(),ActivitySelectedListener {
                 startActivity(intent)
             }
         }
-        binding.backbutton.setOnClickListener {
-            onBackPressed()
-        }
+
     }
 
     override fun onItemSelected(value: String,pos:Int) {

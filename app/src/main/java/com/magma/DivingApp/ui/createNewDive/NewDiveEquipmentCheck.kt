@@ -50,12 +50,7 @@ class NewDiveEquipmentCheck:AppCompatActivity() {
     private fun check () :Boolean{
         val editTextList = listOf(
             binding.headgerET,
-            binding.headger2ET,
-            binding.balloutET,
-            binding.ballout2ET,
-            binding.suit2ET,
-            binding.suitET,
-            binding.acnoET
+
 
         )
 
