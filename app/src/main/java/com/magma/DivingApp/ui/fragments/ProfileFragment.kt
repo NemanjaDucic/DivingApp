@@ -1,10 +1,13 @@
 package com.magma.DivingApp.ui.fragments
 
+import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +18,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -22,6 +26,7 @@ import com.google.firebase.storage.StorageMetadata
 import com.magma.DivingApp.R
 import com.magma.DivingApp.databinding.FragmentProfileBinding
 import com.magma.DivingApp.model.UserModel
+import com.magma.DivingApp.ui.RegisterActivity
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.util.*
@@ -32,6 +37,8 @@ class ProfileFragment:Fragment(){
     private lateinit var attachedContext: Context
     private var selectedImage = ""
     private var  userID = ""
+    val user = FirebaseAuth.getInstance().currentUser
+
     private val selectImageFromGalleryResult =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             selectedImage = uri.toString()
@@ -52,6 +59,8 @@ class ProfileFragment:Fragment(){
         return binding.root
     }
 
+
+
     private fun init() {
         binding.etEmail.isEnabled = false
         binding.etName.isFocusable = false
@@ -61,7 +70,6 @@ class ProfileFragment:Fragment(){
         }
         binding.imgPRofile.setOnClickListener {
             selectImageFromGalleryResult.launch("image/*")
-
         }
         val sharedPreferences = attachedContext?.getSharedPreferences("pref", Context.MODE_PRIVATE)
         userID = sharedPreferences?.getString("userID","")!!
@@ -77,7 +85,36 @@ class ProfileFragment:Fragment(){
             Glide.with(attachedContext).load(user?.image).placeholder(R.drawable.devon).into(binding.imgPRofile)
 
         }
-
+        binding.delLabel.setOnClickListener {
+            shodeleteDialog()
+        }
+    }
+    private fun shodeleteDialog() {
+        AlertDialog.Builder(attachedContext)
+            .setTitle("Are you Sure?")
+            .setMessage("This will Delete Your Account permanently")
+            .setPositiveButton("Delete") { _, _ ->
+                user?.delete()
+                    ?.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(attachedContext,RegisterActivity::class.java)
+                            databaseInstance.child("users").child(userID).removeValue()
+                            startActivity(intent)
+                            FirebaseAuth.getInstance().signOut()
+                        } else {
+                            // Handle the error
+                            val exception = task.exception
+                            if (exception != null) {
+                                // Handle the exception
+                                // You can display an error message to the user or log it for debugging
+                            }
+                        }
+                    }
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
     private fun showAlertDialogWithTwoButtons() {
         val sharedPreferences = attachedContext?.getSharedPreferences("pref", Context.MODE_PRIVATE)
@@ -118,21 +155,6 @@ class ProfileFragment:Fragment(){
 
 
             }
-    fun loadImageFromFirebase(context: Context, imageUri: String, imageView: ImageView, placeholderResId: Int) {
-        val storage = FirebaseStorage.getInstance()
-        val storageRef = storage.reference
 
-        val imageReference = storageRef.child(imageUri)
-
-        val requestOptions = Glide.with(context)
-            .asBitmap()
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(placeholderResId) // Placeholder image while loading
-
-        Glide.with(context) // Replace with GlideApp if using a custom Glide module
-            .load(imageReference)
-            .apply(requestOptions)
-            .into(imageView)
-    }
 
 }

@@ -89,4 +89,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01"
     //tooltips
     implementation "com.github.skydoves:balloon:1.4.8"
+
+    //Circular image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }
