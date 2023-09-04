@@ -97,10 +97,17 @@ class ProfileFragment:Fragment(){
                 user?.delete()
                     ?.addOnCompleteListener { task ->
                         if (task.isSuccessful) {
+                            val sharedPreferences = attachedContext?.getSharedPreferences("pref", Context.MODE_PRIVATE)
                             val intent = Intent(attachedContext,RegisterActivity::class.java)
+
                             databaseInstance.child("users").child(userID).removeValue()
-                            startActivity(intent)
+                            val editor = sharedPreferences?.edit()
+                            editor?.putString("userID", "")
+                            editor?.apply()
+
                             FirebaseAuth.getInstance().signOut()
+
+                            startActivity(intent)
                         } else {
                             // Handle the error
                             val exception = task.exception
